@@ -47,7 +47,7 @@ public class Playermove : MonoBehaviour
         vy = Input.GetAxisRaw("VerticalL") * 0.5f;
         on = Input.GetAxisRaw("P1L1");
 
-        _self.LookAt(_target);
+        _self.LookAt(_target, Vector3.forward); ;
 
         if (onc==0)
         {

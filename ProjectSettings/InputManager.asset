@@ -20,7 +20,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 0
-    joyNum: 2
+    joyNum: 3
   - serializedVersion: 3
     m_Name: VerticalL
     descriptiveName: Stick L up
@@ -36,7 +36,7 @@ InputManager:
     invert: 1
     type: 2
     axis: 1
-    joyNum: 2
+    joyNum: 3
   - serializedVersion: 3
     m_Name: HorizontalR
     descriptiveName: Stick R left
@@ -52,7 +52,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 3
-    joyNum: 2
+    joyNum: 3
   - serializedVersion: 3
     m_Name: VerticalR
     descriptiveName: Stick R up
@@ -68,7 +68,7 @@ InputManager:
     invert: 1
     type: 2
     axis: 4
-    joyNum: 2
+    joyNum: 3
   - serializedVersion: 3
     m_Name: HorizontalL2
     descriptiveName: player 2 Stick L left
@@ -122,7 +122,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: joystick 2 button 4
+    positiveButton: joystick 3 button 4
     altNegativeButton: 
     altPositiveButton: mouse 1
     gravity: 0
@@ -132,7 +132,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 2
+    joyNum: 3
   - serializedVersion: 3
     m_Name: VerticalR2
     descriptiveName: player 2 Stick R up
@@ -148,7 +148,7 @@ InputManager:
     invert: 1
     type: 2
     axis: 4
-    joyNum: 4
+    joyNum: 1
   - serializedVersion: 3
     m_Name: P2L2
     descriptiveName: 
