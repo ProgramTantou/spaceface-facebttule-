@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player2move : MonoBehaviour
 {
     // Start is called before the first frame update
+    static public int hp2 = 5;
+
     public float vx = 0;
     public float vy = 0;
     public float vx2 = 0;
@@ -13,6 +15,8 @@ public class Player2move : MonoBehaviour
     public float on = 0;//L1が押されたらこれを増やす。
     public float onc = 0;
     public int cnt = 60;//弾のクールタイム
+
+    public string tag;
 
     public float keyR = 0;//キーの入力方向。右。
     public float keyL = 0;//キーの入力方向。左。
@@ -83,5 +87,19 @@ public class Player2move : MonoBehaviour
         }*/
 
         rigidbody.AddForce(new Vector3(vx + vx2, vy + vy2, 0), ForceMode.Impulse);
+        if (hp2 <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == tag)
+        {
+            hp2 -= 1;
+        }
     }
 }

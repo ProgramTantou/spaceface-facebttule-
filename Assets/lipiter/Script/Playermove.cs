@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Playermove : MonoBehaviour
 {
+    static public int hp1 = 5;//1Pの体力
+
     public float vx=0;
     public float vy=0;
     public float vx2 = 0;
@@ -12,7 +14,6 @@ public class Playermove : MonoBehaviour
     public float on = 0;//L1が押されたらこれを増やす。
     public float onc = 0;
     public int cnt=60;//弾のクールタイム
-    public int hp = 5;//体力
 
     public float keyR = 0;//キーの入力方向。右。
     public float keyL = 0;//キーの入力方向。左。
@@ -85,11 +86,17 @@ public class Playermove : MonoBehaviour
 
         rigidbody.AddForce(new Vector3(vx+vx2 , vy+vy2, 0), ForceMode.Impulse);
 
-        if (hp < 0)
+        if (hp1 <= 0)
         {
             Destroy(this. gameObject);
         }
 
-        //if()
+}
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag==tag)
+        {
+            hp1 -= 1;
+        }
     }
 }
