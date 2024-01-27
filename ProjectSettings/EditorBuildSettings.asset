@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/lipiter/Title.unity
+    guid: 4b203bdc5308b8041969264321e409e5
+  - enabled: 1
+    path: Assets/facebattle.unity
+    guid: bb1eb86fd70628f4e8800455c1d1fdd2
   m_configObjects: {}

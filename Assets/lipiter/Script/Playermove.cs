@@ -53,8 +53,8 @@ public class Playermove : MonoBehaviour
         pos.z = 0;
         transform.position = pos;
         vx = 0;
-        vx = Input.GetAxisRaw("HorizontalL") * -0.5f;
-        vy = Input.GetAxisRaw("VerticalL") * 0.5f;
+        vx = Input.GetAxisRaw("HorizontalL2") * -0.5f;
+        vy = Input.GetAxisRaw("VerticalL2") * 0.5f;
         on = Input.GetAxisRaw("P1L1");
 
         _self.LookAt(_target, Vector3.forward); ;
@@ -86,8 +86,8 @@ public class Playermove : MonoBehaviour
             onc = 0;
         }
 
-        vx2 = Input.GetAxisRaw("HorizontalR") * -0.5f;
-        vy2 = Input.GetAxisRaw("VerticalR") * 0.5f;
+        vx2 = Input.GetAxisRaw("HorizontalR2") * -0.5f;
+        vy2 = Input.GetAxisRaw("VerticalR2") * 0.5f;
 
         /*if(Input.GetKey("P1L1"))
         {
