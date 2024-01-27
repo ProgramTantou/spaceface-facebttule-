@@ -314,6 +314,7 @@ MonoBehaviour:
   on: 0
   onc: 0
   cnt: 0
+  face: {fileID: 0}
   keyR: 0
   keyL: 0
   tag: 
@@ -628,6 +629,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 671175572}
   m_SourcePrefab: {fileID: 100100000, guid: 1a232afeebd5e58488bca3a49b0f6ba6, type: 3}
+--- !u!1 &295910215 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1018664272722485354, guid: 1a232afeebd5e58488bca3a49b0f6ba6, type: 3}
+  m_PrefabInstance: {fileID: 1600485071}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &671175568 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1a232afeebd5e58488bca3a49b0f6ba6, type: 3}
@@ -1344,6 +1350,7 @@ MonoBehaviour:
   on: 0
   onc: 0
   cnt: 0
+  face: {fileID: 295910215}
   keyR: 0
   keyL: 0
   tag: 

@@ -44,6 +44,9 @@ public class Player2move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 pos = transform.position;
+        pos.z = 0;
+        transform.position = pos;
         vx = 0;
         vx = Input.GetAxisRaw("HorizontalL2") * -0.5f;
         vy = Input.GetAxisRaw("VerticalL2") * 0.5f;
