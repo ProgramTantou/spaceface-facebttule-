@@ -510,7 +510,7 @@ Transform:
   m_GameObject: {fileID: 970493856}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0670002, y: -5.5381136, z: -0.03300003}
+  m_LocalPosition: {x: 0.0670002, y: -0.64, z: -0.03300003}
   m_LocalScale: {x: 0.092611134, y: 0.092611134, z: 0.092611134}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -660,7 +660,7 @@ Rigidbody:
   m_GameObject: {fileID: 1361600676}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 5
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
