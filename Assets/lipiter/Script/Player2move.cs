@@ -25,16 +25,16 @@ public class Player2move : MonoBehaviour
 
     [SerializeField] private Transform _target;
 
-    [SerializeField] GameObject sphere;
+    [SerializeField] GameObject sphere2;
 
-    [SerializeField] GameObject childObj;
+    [SerializeField] GameObject childObj2;
 
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = this.GetComponent<Rigidbody>();
         rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
-        childObj = transform.GetChild(0).gameObject;
+        childObj2 = transform.GetChild(0).gameObject;
     }
 
     // Update is called once per frame
@@ -53,9 +53,9 @@ public class Player2move : MonoBehaviour
             if (on > 0)
             {
                 cnt = 60;
-                GameObject ball = (GameObject)Instantiate(sphere, childObj.transform.position, Quaternion.identity);
-                Rigidbody ballRigidbody = ball.GetComponent<Rigidbody>();
-                ballRigidbody.AddForce(transform.forward * 3000);
+                GameObject ball2 = (GameObject)Instantiate(sphere2, childObj2.transform.position, Quaternion.identity);
+                Rigidbody ball2Rigidbody = ball2.GetComponent<Rigidbody>();
+                ball2Rigidbody.AddForce(transform.forward * 3000);
             }
         }
 
