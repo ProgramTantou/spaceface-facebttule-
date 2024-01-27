@@ -49,7 +49,7 @@ public class Player2move : MonoBehaviour
         vy = Input.GetAxisRaw("VerticalL2") * 0.5f;
         on = Input.GetAxisRaw("P2L2");
 
-        _self.LookAt(_target, new Vector3(0, 0, 2));
+        _self.LookAt(_target, new Vector3(0, 0, 1));
 
         if (onc == 0)
         {
