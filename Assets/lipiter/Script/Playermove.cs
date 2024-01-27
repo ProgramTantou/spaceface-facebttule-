@@ -12,9 +12,12 @@ public class Playermove : MonoBehaviour
     public float on = 0;//L1が押されたらこれを増やす。
     public float onc = 0;
     public int cnt=60;//弾のクールタイム
+    public int hp = 5;//体力
 
     public float keyR = 0;//キーの入力方向。右。
     public float keyL = 0;//キーの入力方向。左。
+
+    public string tag;
 
     public GameObject gameObject;
 
@@ -32,7 +35,6 @@ public class Playermove : MonoBehaviour
     void Start()
     {
         rigidbody = this.GetComponent<Rigidbody>();
-        rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
         childObj = transform.GetChild(0).gameObject;
     }
 
@@ -82,5 +84,12 @@ public class Playermove : MonoBehaviour
         }*/
 
         rigidbody.AddForce(new Vector3(vx+vx2 , vy+vy2, 0), ForceMode.Impulse);
+
+        if (hp < 0)
+        {
+            Destroy(this. gameObject);
+        }
+
+        //if()
     }
 }
