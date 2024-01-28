@@ -6,14 +6,14 @@ public class Playermove : MonoBehaviour
 {
     static public int hp1 = 5;//1Pの体力
 
-    public float vx=0;
-    public float vy=0;
+    public float vx = 0;
+    public float vy = 0;
     public float vx2 = 0;
     public float vy2 = 0;
     public float speed = 0.01f;
     public float on = 0;//L1が押されたらこれを増やす。
     public float onc = 0;
-    public int cnt=60;//弾のクールタイム
+    public int cnt = 60;//弾のクールタイム
     public GameObject face;
     SkinnedMeshRenderer skinnedMeshRenderer;
     float blendr;
@@ -98,51 +98,107 @@ public class Playermove : MonoBehaviour
 
         if (vx == 0 && vx2 == 0)
         {
+            skinnedMeshRenderer.SetBlendShapeWeight(0, 0);
+            skinnedMeshRenderer.SetBlendShapeWeight(1, 0);
             blendr = 0;
             blendl = 0;
-        }
-        Debug.Log(vx);
-        if (vx < 0) {
-            blendr = blendr + vx;
-            skinnedMeshRenderer.SetBlendShapeWeight(0, vx * blendr);
-
-        }
-
-        if (vx > 0)
-        {
-            blendl = blendl + vx;
-            skinnedMeshRenderer.SetBlendShapeWeight(1, vx * blendl);
-        }
-
-        if (vx2 < 0)
-        {
-            blendr = blendr + vx2;
-            skinnedMeshRenderer.SetBlendShapeWeight(0, vx2 * blendr);
-        }
-
-        if (vx2 > 0)
-        {
-            blendl = blendl + vx2;
-            skinnedMeshRenderer.SetBlendShapeWeight(1, vx2 * blendl);
+            Debug.Log("reset!");
         }
         if (vx < 0 && vx2 > 0)
         {
             blendl = blendl - vx;
-            skinnedMeshRenderer.SetBlendShapeWeight(0, vx * blendr);
+            skinnedMeshRenderer.SetBlendShapeWeight(1, vx * blendl);
             blendr = blendr - vx2;
-            skinnedMeshRenderer.SetBlendShapeWeight(1, vx2 * blendl);
+            skinnedMeshRenderer.SetBlendShapeWeight(0, vx2 * blendr);
+            Debug.Log("shrink!");
+        }
+        else
+        {
+            if (vx < 0)
+            {
+                blendr = blendr + vx;
+                skinnedMeshRenderer.SetBlendShapeWeight(0, vx * blendr);
+                Debug.Log("right!");
+            }
+
+            if (vx > 0)
+            {
+                blendl = blendl + vx;
+                skinnedMeshRenderer.SetBlendShapeWeight(1, vx * blendl);
+                Debug.Log("left!");
+            }
+            if (vx2 < 0)
+            {
+                blendr = blendr + vx2;
+                skinnedMeshRenderer.SetBlendShapeWeight(0, vx2 * blendr);
+                Debug.Log("right2!");
+            }
+            if (vx2 > 0)
+            {
+                blendl = blendl + vx2;
+                skinnedMeshRenderer.SetBlendShapeWeight(1, vx2 * blendl);
+                Debug.Log("left2!");
+            }
+
+        }
+        if (vy == 0 && vy2 == 0)
+        {
+            skinnedMeshRenderer.SetBlendShapeWeight(2, 0);
+            skinnedMeshRenderer.SetBlendShapeWeight(3, 0);
+            blendu = 0;
+            blendd = 0;
+            Debug.Log("reset!");
+        }
+        if (vy < 0 && vy2 > 0)
+        {
+            blendu = blendu - vy;
+            skinnedMeshRenderer.SetBlendShapeWeight(3, vy * blendu);
+            blendd = blendd - vy2;
+            skinnedMeshRenderer.SetBlendShapeWeight(2, vy2 * blendd);
+            Debug.Log("shrink2!");
+        }
+        else
+        {
+            if (vy < 0)
+            {
+                blendd = blendd - vy;
+                skinnedMeshRenderer.SetBlendShapeWeight(3, -vy * blendd);
+                Debug.Log("down!");
+            }
+            if (vy > 0)
+            {
+                blendu = blendu + vy;
+                skinnedMeshRenderer.SetBlendShapeWeight(2, vy * blendu);
+                Debug.Log("up!");
+            }
+            if (vy2 < 0)
+            {
+                blendd = blendd - vy2;
+                skinnedMeshRenderer.SetBlendShapeWeight(3, -vy2 * blendd);
+                Debug.Log("down2!");
+            }
+            if (vy2 > 0)
+            {
+                blendu = blendu + vy2;
+                skinnedMeshRenderer.SetBlendShapeWeight(2, vy2 * blendu);
+                Debug.Log("up2!");
+            }
         }
         if (hp1 <= 0)
         {
-            Destroy(this. gameObject);
+            Destroy(this.gameObject);
         }
+        //Debug.Log(vx);
+        //Debug.Log(vx2);
+    }
 
-}
+
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag==tag)
+        if (collision.gameObject.tag == tag)
         {
             hp1 -= 1;
         }
     }
 }
+
