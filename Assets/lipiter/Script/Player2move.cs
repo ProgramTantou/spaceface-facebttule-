@@ -21,7 +21,7 @@ public class Player2move : MonoBehaviour
     public float keyR = 0;//キーの入力方向。右。
     public float keyL = 0;//キーの入力方向。左。
 
-    public GameObject gameObject;
+  //  public GameObject gameObject;
 
     Rigidbody rigidbody;
 
@@ -100,7 +100,7 @@ public class Player2move : MonoBehaviour
     }
     public void Destroy()
     {
-        gameObject.SetActive(false);
+        this.gameObject.SetActive(false);
         Debug.Log("Hp0");
     }
  

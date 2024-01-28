@@ -815,38 +815,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.67194486
-  m_Height: 1.9245763
+  m_Radius: 1.08
+  m_Height: 2.07
   m_Direction: 2
   m_Center: {x: 0.016185552, y: 0.32834402, z: 0.041274462}
---- !u!114 &856228551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 856228549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09c3da2e2aa59a04f8406eb776715d46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vx: 0
-  vy: 0
-  vx2: 0
-  vy2: 0
-  speed: 0.01
-  on: 0
-  onc: -0.15
-  cnt: 60
-  tag: P1bullet
-  keyR: 0
-  keyL: 0
-  gameObject: {fileID: 1853099619285292030, guid: be37e69f124d18a47ab69e271a3fc096, type: 3}
-  _self: {fileID: 856228553}
-  _target: {fileID: 0}
-  sphere2: {fileID: 1853099619285292030, guid: be37e69f124d18a47ab69e271a3fc096, type: 3}
-  childObj2: {fileID: 915509554}
 --- !u!54 &856228552
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -892,6 +864,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 492529383}
+--- !u!114 &856228555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856228549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c3da2e2aa59a04f8406eb776715d46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vx: 0
+  vy: 0
+  vx2: 0
+  vy2: 0
+  speed: 0.01
+  on: 0
+  onc: 0
+  cnt: 60
+  tagname: P1bullet
+  keyR: 0
+  keyL: 0
+  _self: {fileID: 856228553}
+  _target: {fileID: 1145637504}
+  sphere2: {fileID: 1853099619285292030, guid: be37e69f124d18a47ab69e271a3fc096, type: 3}
+  childObj2: {fileID: 915509554}
 --- !u!1 &915509554
 GameObject:
   m_ObjectHideFlags: 0
@@ -1227,7 +1226,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.7047506
+  m_Radius: 1.25
   m_Height: 2.021512
   m_Direction: 2
   m_Center: {x: -0.032818455, y: 0.14777084, z: 0.06798755}
@@ -1284,7 +1283,7 @@ MonoBehaviour:
   tag: P2bullet
   gameObject: {fileID: 1853099619285292030, guid: 7a12659320655854c8ab1617a1aa1331, type: 3}
   _self: {fileID: 1145637504}
-  _target: {fileID: 0}
+  _target: {fileID: 856228553}
   sphere: {fileID: 1853099619285292030, guid: 7a12659320655854c8ab1617a1aa1331, type: 3}
   childObj: {fileID: 1347859799}
 --- !u!114 &1145637510
@@ -2195,13 +2194,13 @@ PrefabInstance:
       addedObject: {fileID: 856228552}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1a232afeebd5e58488bca3a49b0f6ba6, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 856228551}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1a232afeebd5e58488bca3a49b0f6ba6, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 856228550}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1a232afeebd5e58488bca3a49b0f6ba6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 856228554}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1a232afeebd5e58488bca3a49b0f6ba6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 856228555}
   m_SourcePrefab: {fileID: 100100000, guid: 1a232afeebd5e58488bca3a49b0f6ba6, type: 3}
 --- !u!1 &1955422069
 GameObject:
