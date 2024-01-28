@@ -1281,7 +1281,7 @@ MonoBehaviour:
   face: {fileID: 1145637503}
   keyR: 0
   keyL: 0
-  tagname: 
+  tagname: P2bullet
   gameObject: {fileID: 4271802986297937515, guid: 6f28ad66a8f23284492784247dd87de7, type: 3}
   _self: {fileID: 1145637504}
   _target: {fileID: 856228553}

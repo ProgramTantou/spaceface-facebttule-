@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3459800813294949585}
   - component: {fileID: 552945595904596852}
   - component: {fileID: 2326252551702474686}
-  - component: {fileID: -835624357220555469}
   - component: {fileID: -4709268566126245846}
+  - component: {fileID: -9158428793262893011}
   m_Layer: 0
   m_Name: Bullet(1)
   m_TagString: P1bullet
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 4271802986297937515}
   serializedVersion: 2
   m_LocalRotation: {x: 0.13052598, y: -0, z: -0, w: 0.99144495}
-  m_LocalPosition: {x: -142.56454, y: 64.83262, z: 24.03901}
-  m_LocalScale: {x: 4.3200154, y: 4.3200154, z: 4.3200154}
+  m_LocalPosition: {x: -142.56454, y: 64.795, z: 24.178}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -85,19 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-835624357220555469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4271802986297937515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d66c363350f94be4c981fae7bec99de8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cnt: 3000
 --- !u!54 &-4709268566126245846
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -125,3 +112,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-9158428793262893011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4271802986297937515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d66c363350f94be4c981fae7bec99de8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _self: {fileID: 3459800813294949585}
+  _target: {fileID: 0}
+  cnt: 3000
