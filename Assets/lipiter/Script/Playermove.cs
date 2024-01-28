@@ -20,10 +20,13 @@ public class Playermove : MonoBehaviour
     float blendl;
     float blendu;
     float blendd;
+    CapsuleCollider c;
+    float cstartheight;
+    float cstartradius;
 
     public float keyR = 0;//キーの入力方向。右。
     public float keyL = 0;//キーの入力方向。左。
-
+    
     public string tagname;
 
     public GameObject gameObject;
@@ -44,6 +47,9 @@ public class Playermove : MonoBehaviour
         rigidbody = this.GetComponent<Rigidbody>();
         childObj = transform.GetChild(0).gameObject;
         skinnedMeshRenderer = face.GetComponent<SkinnedMeshRenderer>();
+        c = this.GetComponent<CapsuleCollider>();
+        cstartheight = c.height;
+        cstartradius = c.radius;
     }
 
     // Update is called once per frame
@@ -66,6 +72,7 @@ public class Playermove : MonoBehaviour
             {
                 cnt = 60;
                 GameObject ball = (GameObject)Instantiate(sphere, childObj.transform.position, Quaternion.Euler(90,0,0));
+                ball.GetComponent<Bullet1>().transform.rotation = childObj.transform.rotation;
                 Rigidbody ballRigidbody = ball.GetComponent<Rigidbody>();
                 ballRigidbody.AddForce(transform.forward * 3000);
             }
@@ -103,6 +110,8 @@ public class Playermove : MonoBehaviour
             blendr = 0;
             blendl = 0;
             Debug.Log("reset!");
+            c.radius = cstartradius;
+            
         }
         if (vx < 0 && vx2 > 0)
         {
@@ -111,9 +120,14 @@ public class Playermove : MonoBehaviour
             blendr = blendr - vx2;
             skinnedMeshRenderer.SetBlendShapeWeight(0, vx2 * blendr);
             Debug.Log("shrink!");
+            c.radius = c.radius - .003f;
         }
         else
         {
+            if (vx > 0 && vx2 < 0)
+            {
+                c.radius = c.radius + .001f;
+            }
             if (vx < 0)
             {
                 blendr = blendr + vx;
@@ -148,6 +162,7 @@ public class Playermove : MonoBehaviour
             blendu = 0;
             blendd = 0;
             Debug.Log("reset!");
+            c.height = cstartheight;
         }
         if (vy < 0 && vy2 > 0)
         {
@@ -156,9 +171,14 @@ public class Playermove : MonoBehaviour
             blendd = blendd - vy2;
             skinnedMeshRenderer.SetBlendShapeWeight(2, vy2 * blendd);
             Debug.Log("shrink2!");
+            c.height = c.height - .003f;
         }
         else
         {
+            if (vy > 0 && vy2 < 0)
+            {
+                c.radius = c.radius - .002f;
+            }
             if (vy < 0)
             {
                 blendd = blendd - vy;

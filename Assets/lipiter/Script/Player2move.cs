@@ -68,6 +68,7 @@ public class Player2move : MonoBehaviour
             {
                 cnt = 60;
                 GameObject ball2 = (GameObject)Instantiate(sphere2, childObj2.transform.position, Quaternion.Euler(90, 0, 0));
+                ball2.GetComponent<Bullet1>().transform.rotation = childObj2.transform.rotation;
                 Rigidbody ball2Rigidbody = ball2.GetComponent<Rigidbody>();
                 ball2Rigidbody.AddForce(transform.forward * 3000);
             }
