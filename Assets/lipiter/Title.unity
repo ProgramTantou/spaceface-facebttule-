@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -402,7 +402,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.7047506
+  m_Radius: 1.89
   m_Height: 2.021512
   m_Direction: 2
   m_Center: {x: -0.032818455, y: 0.14777084, z: 0.06798755}
@@ -457,7 +457,6 @@ MonoBehaviour:
   keyR: 0
   keyL: 0
   tagname: 
-  gameObject: {fileID: 1853099619285292030, guid: 7a12659320655854c8ab1617a1aa1331, type: 3}
   _self: {fileID: 462353231}
   _target: {fileID: 0}
   sphere: {fileID: 1853099619285292030, guid: 7a12659320655854c8ab1617a1aa1331, type: 3}
@@ -519,7 +518,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.29, y: 0.9999999, z: 1.58}
+  m_Size: {x: 1.29, y: 600, z: 1.58}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &592086973
 MeshRenderer:
@@ -704,8 +703,8 @@ GameObject:
   - component: {fileID: 1374748083}
   - component: {fileID: 1374748082}
   - component: {fileID: 1374748081}
-  - component: {fileID: 1374748080}
   - component: {fileID: 1374748079}
+  - component: {fileID: 1374748084}
   m_Layer: 0
   m_Name: "Howto\u30DC\u30BF\u30F3"
   m_TagString: Untagged
@@ -732,20 +731,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.33, y: 0.9999999, z: 1.55}
+  m_Size: {x: 1.33, y: 600, z: 1.55}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1374748080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1374748078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e478428a363e5f842802751b01b65388, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &1374748081
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -811,6 +798,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: -90, z: -90}
+--- !u!114 &1374748084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374748078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e7e58294af085d479d44c70495f1cee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  howto: {fileID: 7599725113409452717, guid: 596e8a3ab09d3a044a03690ba4cda505, type: 3}
 --- !u!1 &1467157716
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,7 +927,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.23, y: 0.9999999, z: 1.56}
+  m_Size: {x: 1.23, y: 600, z: 1.56}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1485891455
 GameObject:
