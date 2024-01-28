@@ -14,6 +14,7 @@ public class Bullet1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       // rbody=this.GetComponent;
         _self.LookAt(_target.transform, Vector3.forward); ;
     }
 

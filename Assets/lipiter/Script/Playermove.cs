@@ -29,7 +29,7 @@ public class Playermove : MonoBehaviour
     
     public string tagname;
 
-    public GameObject gameObject;
+   //public GameObject gameObject;
 
     Rigidbody rigidbody;
 
@@ -210,7 +210,7 @@ public class Playermove : MonoBehaviour
         }
         //Debug.Log(vx);
         //Debug.Log(vx2);
-    }
+}
 
 
     private void OnCollisionEnter(Collision collision)
