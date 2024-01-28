@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class Player2move : MonoBehaviour
 {
+    AudioSource audioSource;
+    AudioSource audioSource2;
+
+    public AudioClip sound1;
+    public AudioClip sound2;
+
+
+
     // Start is called before the first frame update
     static public int hp2 = 5;
 
@@ -46,6 +54,8 @@ public class Player2move : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hp2 = 5;
+        gameObject.SetActive(true);
         rigidbody = this.GetComponent<Rigidbody>();
         rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
         childObj2 = transform.GetChild(0).gameObject;
@@ -74,6 +84,7 @@ public class Player2move : MonoBehaviour
             onc = on;
             if (on > 0)
             {
+                audioSource.PlayOneShot(sound1);
                 cnt = 60;
                 GameObject ball2 = (GameObject)Instantiate(sphere2, childObj2.transform.position, Quaternion.Euler(90, 0, 0));
                 ball2.GetComponent<Bullet1>().transform.rotation = childObj2.transform.rotation;
@@ -234,6 +245,7 @@ private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == tagname)
         {
+
             Debug.Log("HIT");
             hp2 -= 1;
         }

@@ -6,6 +6,12 @@ public class Playermove : MonoBehaviour
 {
     static public int hp1 = 5;//1P‚Ì‘Ì—Í
 
+    AudioSource audioSource;
+    AudioSource audioSource2;
+
+    public AudioClip sound1;
+    public AudioClip sound2;
+
     public float vx = 0;
     public float vy = 0;
     public float vx2 = 0;
@@ -44,6 +50,11 @@ public class Playermove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hp1 = 5;
+        gameObject.SetActive(true);
+        audioSource = GetComponent<AudioSource>();
+        audioSource2 = GetComponent<AudioSource>();
+
         rigidbody = this.GetComponent<Rigidbody>();
         childObj = transform.GetChild(0).gameObject;
         skinnedMeshRenderer = face.GetComponent<SkinnedMeshRenderer>();
@@ -56,6 +67,7 @@ public class Playermove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         Vector3 pos = transform.position;
         pos.z = 0;
         transform.position = pos;
@@ -71,6 +83,7 @@ public class Playermove : MonoBehaviour
             onc = on;
             if (on > 0)
             {
+                audioSource.PlayOneShot(sound1);
                 cnt = 60;
                 GameObject ball = (GameObject)Instantiate(sphere, childObj.transform.position, Quaternion.Euler(90,0,0));
                 ball.GetComponent<Bullet1>().transform.rotation = childObj.transform.rotation;
@@ -216,7 +229,8 @@ public class Playermove : MonoBehaviour
         }
         if (hp1 <= 0)
         {
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
+            gameObject.SetActive(false);
         }
         //Debug.Log(vx);
         //Debug.Log(vx2);
@@ -227,6 +241,7 @@ public class Playermove : MonoBehaviour
     {
         if (collision.gameObject.tag == tagname)
         {
+            audioSource2.PlayOneShot(sound2);
             Debug.Log("HIT");
             hp1 -= 1;
         }

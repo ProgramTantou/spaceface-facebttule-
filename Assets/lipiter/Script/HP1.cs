@@ -11,7 +11,7 @@ public class HP1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        slider.maxValue = Playermove.hp1;
+        slider.maxValue = 5;
     }
 
     // Update is called once per frame

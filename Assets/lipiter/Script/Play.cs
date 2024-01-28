@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Play : MonoBehaviour
 {
+    
 
     float PushL1 = 0;//L1‚ª‰Ÿ‚³‚ê‚Ä‚¢‚éŠÔ‚±‚ê‚ªƒIƒ“‚É
     // Start is called before the first frame update
