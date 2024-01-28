@@ -177,7 +177,7 @@ public class Playermove : MonoBehaviour
         {
             if (vy > 0 && vy2 < 0)
             {
-                c.radius = c.radius - .002f;
+                c.radius = c.radius+ .002f;
             }
             if (vy < 0)
             {

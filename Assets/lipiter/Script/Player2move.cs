@@ -26,6 +26,9 @@ public class Player2move : MonoBehaviour
     float blendl;
     float blendu;
     float blendd;
+    CapsuleCollider c;
+    float cstartheight;
+    float cstartradius;
 
     //  public GameObject gameObject;
 
@@ -46,6 +49,9 @@ public class Player2move : MonoBehaviour
         rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
         childObj2 = transform.GetChild(0).gameObject;
         skinnedMeshRenderer = face.GetComponent<SkinnedMeshRenderer>();
+        c = this.GetComponent<CapsuleCollider>();
+        cstartheight = c.height;
+        cstartradius = c.radius;
     }
 
     // Update is called once per frame
@@ -105,6 +111,7 @@ public class Player2move : MonoBehaviour
             blendr = 0;
             blendl = 0;
             Debug.Log("reset!");
+            c.radius = cstartradius;
         }
         if (vx < 0 && vx2 > 0)
         {
@@ -113,9 +120,14 @@ public class Player2move : MonoBehaviour
             blendr = blendr - vx2;
             skinnedMeshRenderer.SetBlendShapeWeight(0, vx2 * blendr);
             Debug.Log("shrink!");
+            c.radius = c.radius - .003f;
         }
         else
         {
+            if (vx > 0 && vx2 < 0)
+            {
+                c.radius = c.radius + .001f;
+            }
             if (vx < 0)
             {
                 blendr = blendr + vx;
@@ -150,6 +162,7 @@ public class Player2move : MonoBehaviour
             blendu = 0;
             blendd = 0;
             Debug.Log("reset!");
+            c.height = cstartheight;
         }
         if (vy < 0 && vy2 > 0)
         {
@@ -158,9 +171,14 @@ public class Player2move : MonoBehaviour
             blendd = blendd - vy2;
             skinnedMeshRenderer.SetBlendShapeWeight(2, vy2 * blendd);
             Debug.Log("shrink2!");
+            c.height = c.height - .003f;
         }
         else
         {
+            if (vy > 0 && vy2 < 0)
+            {
+                c.radius = c.radius + .002f;
+            }
             if (vy < 0)
             {
                 blendd = blendd - vy;
