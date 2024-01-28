@@ -7,10 +7,8 @@ public class Playermove : MonoBehaviour
     static public int hp1 = 5;//1P‚Ì‘Ì—Í
 
     AudioSource audioSource;
-    AudioSource audioSource2;
 
     public AudioClip sound1;
-    public AudioClip sound2;
 
     public float vx = 0;
     public float vy = 0;
@@ -50,10 +48,9 @@ public class Playermove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hp1 = 5;
+         hp1 = 5;
         gameObject.SetActive(true);
         audioSource = GetComponent<AudioSource>();
-        audioSource2 = GetComponent<AudioSource>();
 
         rigidbody = this.GetComponent<Rigidbody>();
         childObj = transform.GetChild(0).gameObject;
@@ -241,7 +238,6 @@ public class Playermove : MonoBehaviour
     {
         if (collision.gameObject.tag == tagname)
         {
-            audioSource2.PlayOneShot(sound2);
             Debug.Log("HIT");
             hp1 -= 1;
         }
