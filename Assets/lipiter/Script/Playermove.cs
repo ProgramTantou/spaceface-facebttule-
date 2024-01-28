@@ -24,7 +24,7 @@ public class Playermove : MonoBehaviour
     public float keyR = 0;//キーの入力方向。右。
     public float keyL = 0;//キーの入力方向。左。
 
-    public string tag;
+    public string tagname;
 
     public GameObject gameObject;
 
@@ -65,7 +65,7 @@ public class Playermove : MonoBehaviour
             if (on > 0)
             {
                 cnt = 60;
-                GameObject ball = (GameObject)Instantiate(sphere, childObj.transform.position, Quaternion.identity);
+                GameObject ball = (GameObject)Instantiate(sphere, childObj.transform.position, Quaternion.Euler(90,0,0));
                 Rigidbody ballRigidbody = ball.GetComponent<Rigidbody>();
                 ballRigidbody.AddForce(transform.forward * 3000);
             }
@@ -195,8 +195,9 @@ public class Playermove : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == tag)
+        if (collision.gameObject.tag == tagname)
         {
+            Debug.Log("HIT");
             hp1 -= 1;
         }
     }
