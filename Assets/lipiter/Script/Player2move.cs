@@ -20,8 +20,14 @@ public class Player2move : MonoBehaviour
 
     public float keyR = 0;//キーの入力方向。右。
     public float keyL = 0;//キーの入力方向。左。
+    public GameObject face;
+    SkinnedMeshRenderer skinnedMeshRenderer;
+    float blendr;
+    float blendl;
+    float blendu;
+    float blendd;
 
-  //  public GameObject gameObject;
+    //  public GameObject gameObject;
 
     Rigidbody rigidbody;
 
@@ -39,6 +45,7 @@ public class Player2move : MonoBehaviour
         rigidbody = this.GetComponent<Rigidbody>();
         rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
         childObj2 = transform.GetChild(0).gameObject;
+        skinnedMeshRenderer = face.GetComponent<SkinnedMeshRenderer>();
     }
 
     // Update is called once per frame
@@ -50,7 +57,7 @@ public class Player2move : MonoBehaviour
         vx = 0;
         vx = Input.GetAxisRaw("HorizontalL2") * -0.5f;
         vy = Input.GetAxisRaw("VerticalL2") * 0.5f;
-        on = Input.GetAxisRaw("P2L2");
+        on = Input.GetAxisRaw("P1L1");
 
         _self.LookAt(_target, new Vector3(0, 0, 1));
 
@@ -90,6 +97,95 @@ public class Player2move : MonoBehaviour
         }*/
 
         rigidbody.AddForce(new Vector3(vx + vx2, vy + vy2, 0), ForceMode.Impulse);
+        if (vx == 0 && vx2 == 0)
+        {
+            skinnedMeshRenderer.SetBlendShapeWeight(0, 0);
+            skinnedMeshRenderer.SetBlendShapeWeight(1, 0);
+            blendr = 0;
+            blendl = 0;
+            Debug.Log("reset!");
+        }
+        if (vx < 0 && vx2 > 0)
+        {
+            blendl = blendl - vx;
+            skinnedMeshRenderer.SetBlendShapeWeight(1, vx * blendl);
+            blendr = blendr - vx2;
+            skinnedMeshRenderer.SetBlendShapeWeight(0, vx2 * blendr);
+            Debug.Log("shrink!");
+        }
+        else
+        {
+            if (vx < 0)
+            {
+                blendr = blendr + vx;
+                skinnedMeshRenderer.SetBlendShapeWeight(0, vx * blendr);
+                Debug.Log("right!");
+            }
+
+            if (vx > 0)
+            {
+                blendl = blendl + vx;
+                skinnedMeshRenderer.SetBlendShapeWeight(1, vx * blendl);
+                Debug.Log("left!");
+            }
+            if (vx2 < 0)
+            {
+                blendr = blendr + vx2;
+                skinnedMeshRenderer.SetBlendShapeWeight(0, vx2 * blendr);
+                Debug.Log("right2!");
+            }
+            if (vx2 > 0)
+            {
+                blendl = blendl + vx2;
+                skinnedMeshRenderer.SetBlendShapeWeight(1, vx2 * blendl);
+                Debug.Log("left2!");
+            }
+
+        }
+        if (vy == 0 && vy2 == 0)
+        {
+            skinnedMeshRenderer.SetBlendShapeWeight(2, 0);
+            skinnedMeshRenderer.SetBlendShapeWeight(3, 0);
+            blendu = 0;
+            blendd = 0;
+            Debug.Log("reset!");
+        }
+        if (vy < 0 && vy2 > 0)
+        {
+            blendu = blendu - vy;
+            skinnedMeshRenderer.SetBlendShapeWeight(3, vy * blendu);
+            blendd = blendd - vy2;
+            skinnedMeshRenderer.SetBlendShapeWeight(2, vy2 * blendd);
+            Debug.Log("shrink2!");
+        }
+        else
+        {
+            if (vy < 0)
+            {
+                blendd = blendd - vy;
+                skinnedMeshRenderer.SetBlendShapeWeight(3, -vy * blendd);
+                Debug.Log("down!");
+            }
+            if (vy > 0)
+            {
+                blendu = blendu + vy;
+                skinnedMeshRenderer.SetBlendShapeWeight(2, vy * blendu);
+                Debug.Log("up!");
+            }
+            if (vy2 < 0)
+            {
+                blendd = blendd - vy2;
+                skinnedMeshRenderer.SetBlendShapeWeight(3, -vy2 * blendd);
+                Debug.Log("down2!");
+            }
+            if (vy2 > 0)
+            {
+                blendu = blendu + vy2;
+                skinnedMeshRenderer.SetBlendShapeWeight(2, vy2 * blendu);
+                Debug.Log("up2!");
+            }
+        }
+
         if (hp2 <= 0)
         {
             Destroy();
