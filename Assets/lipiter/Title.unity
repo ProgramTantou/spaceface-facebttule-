@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -456,7 +456,7 @@ MonoBehaviour:
   face: {fileID: 703032055}
   keyR: 0
   keyL: 0
-  tag: 
+  tagname: 
   gameObject: {fileID: 1853099619285292030, guid: 7a12659320655854c8ab1617a1aa1331, type: 3}
   _self: {fileID: 462353231}
   _target: {fileID: 0}
@@ -602,7 +602,7 @@ GameObject:
   - component: {fileID: 715356721}
   - component: {fileID: 715356720}
   - component: {fileID: 715356719}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Post-process Volume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -621,8 +621,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 0}
-  isGlobal: 0
+  sharedProfile: {fileID: 11400000, guid: 7e0897e94a3697b469ddcbf8799723e7, type: 2}
+  isGlobal: 1
   blendDistance: 0
   weight: 1
   priority: 0
@@ -656,7 +656,7 @@ Transform:
   m_GameObject: {fileID: 715356718}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 304.71457, y: 101.0449, z: -22.00236}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1121,12 +1121,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1497520688}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.10429379, y: 0.8782771, z: -0.4095473, w: -0.22365879}
-  m_LocalPosition: {x: 551.5781, y: 461.16583, z: 183.71222}
+  m_LocalRotation: {x: -0.0000000074505797, y: 0.9999226, z: 0.000000029802319, w: 0.012442781}
+  m_LocalPosition: {x: 242, y: 158.69998, z: 684.00006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2030583539}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 178.574, z: 0}
 --- !u!114 &1497520692
 MonoBehaviour:
@@ -1143,7 +1143,7 @@ MonoBehaviour:
   volumeTrigger: {fileID: 1497520691}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
   antialiasingMode: 0
@@ -1347,14 +1347,14 @@ Transform:
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1497520691}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1497520691}
   - {fileID: 2030583539}
   - {fileID: 1546549168}
   - {fileID: 1485891459}
