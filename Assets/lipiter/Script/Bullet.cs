@@ -8,7 +8,9 @@ public class Bullet1 : MonoBehaviour
 
     public Transform _target;
 
-    public int cnt = 3000;//これが０になったらオブジェクトを消す。
+    public int cnt = 3000;//これが０になったらオブジェクトを消す。ody;
+
+    Rigidbody rbody;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,5 +25,10 @@ public class Bullet1 : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(this.gameObject);
     }
 }
