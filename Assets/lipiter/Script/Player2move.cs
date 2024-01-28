@@ -16,7 +16,7 @@ public class Player2move : MonoBehaviour
     public float onc = 0;
     public int cnt = 60;//弾のクールタイム
 
-    public string tag;
+    public string tagname;
 
     public float keyR = 0;//キーの入力方向。右。
     public float keyL = 0;//キーの入力方向。左。
@@ -92,15 +92,22 @@ public class Player2move : MonoBehaviour
         rigidbody.AddForce(new Vector3(vx + vx2, vy + vy2, 0), ForceMode.Impulse);
         if (hp2 <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy();
+            //Destroy(this.gameObject);
+            
         }
+
     }
-
-
-
-    private void OnCollisionEnter(Collision collision)
+    public void Destroy()
     {
-        if (collision.gameObject.tag == tag)
+        gameObject.SetActive(false);
+        Debug.Log("Hp0");
+    }
+ 
+
+private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == tagname)
         {
             hp2 -= 1;
         }
