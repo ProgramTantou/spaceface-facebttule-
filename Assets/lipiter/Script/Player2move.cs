@@ -67,7 +67,7 @@ public class Player2move : MonoBehaviour
             if (on > 0)
             {
                 cnt = 60;
-                GameObject ball2 = (GameObject)Instantiate(sphere2, childObj2.transform.position, Quaternion.identity);
+                GameObject ball2 = (GameObject)Instantiate(sphere2, childObj2.transform.position, Quaternion.Euler(90, 0, 0));
                 Rigidbody ball2Rigidbody = ball2.GetComponent<Rigidbody>();
                 ball2Rigidbody.AddForce(transform.forward * 3000);
             }
@@ -205,6 +205,7 @@ private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == tagname)
         {
+            Debug.Log("HIT");
             hp2 -= 1;
         }
     }
