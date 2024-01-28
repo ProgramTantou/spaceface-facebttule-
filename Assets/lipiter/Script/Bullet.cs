@@ -15,7 +15,7 @@ public class Bullet1 : MonoBehaviour
     void Start()
     {
        // rbody=this.GetComponent;
-        _self.LookAt(_target.transform, Vector3.forward); ;
+        _self.LookAt(_target.transform, Vector3.forward); 
     }
 
     // Update is called once per frame

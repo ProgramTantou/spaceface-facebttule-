@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Player2move : MonoBehaviour
 {
-    AudioSource audioSource;
-    AudioSource audioSource2;
+    AudioSource audioSource3;
+    AudioSource audioSource4;
 
-    public AudioClip sound1;
-    public AudioClip sound2;
+    public AudioClip Sound3;
+    public AudioClip sound4;
 
 
 
@@ -84,12 +84,13 @@ public class Player2move : MonoBehaviour
             onc = on;
             if (on > 0)
             {
-                audioSource.PlayOneShot(sound1);
+                
                 cnt = 60;
                 GameObject ball2 = (GameObject)Instantiate(sphere2, childObj2.transform.position, Quaternion.Euler(90, 0, 0));
                 ball2.GetComponent<Bullet1>().transform.rotation = childObj2.transform.rotation;
                 Rigidbody ball2Rigidbody = ball2.GetComponent<Rigidbody>();
                 ball2Rigidbody.AddForce(transform.forward * 3000);
+                audioSource3.PlayOneShot(Sound3);
             }
         }
 
@@ -245,7 +246,7 @@ private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == tagname)
         {
-
+            audioSource4.PlayOneShot(sound4);
             Debug.Log("HIT");
             hp2 -= 1;
         }
