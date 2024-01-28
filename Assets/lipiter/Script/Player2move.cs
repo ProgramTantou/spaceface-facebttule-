@@ -29,6 +29,7 @@ public class Player2move : MonoBehaviour
     CapsuleCollider c;
     float cstartheight;
     float cstartradius;
+    Vector3 bulletstartscale;
 
     //  public GameObject gameObject;
 
@@ -52,6 +53,7 @@ public class Player2move : MonoBehaviour
         c = this.GetComponent<CapsuleCollider>();
         cstartheight = c.height;
         cstartradius = c.radius;
+        bulletstartscale = new Vector3(2, 2, 2);
     }
 
     // Update is called once per frame
@@ -112,6 +114,7 @@ public class Player2move : MonoBehaviour
             blendl = 0;
             Debug.Log("reset!");
             c.radius = cstartradius;
+            sphere2.transform.localScale = bulletstartscale;
         }
         if (vx < 0 && vx2 > 0)
         {
@@ -121,12 +124,15 @@ public class Player2move : MonoBehaviour
             skinnedMeshRenderer.SetBlendShapeWeight(0, vx2 * blendr);
             Debug.Log("shrink!");
             c.radius = c.radius - .003f;
+            sphere2.transform.localScale = bulletstartscale;
         }
         else
         {
             if (vx > 0 && vx2 < 0)
             {
+                Debug.Log("grow!");
                 c.radius = c.radius + .001f;
+                sphere2.transform.localScale += new Vector3(.002f, .002f, .002f);
             }
             if (vx < 0)
             {
@@ -163,6 +169,7 @@ public class Player2move : MonoBehaviour
             blendd = 0;
             Debug.Log("reset!");
             c.height = cstartheight;
+            sphere2.transform.localScale = bulletstartscale;
         }
         if (vy < 0 && vy2 > 0)
         {
@@ -172,12 +179,15 @@ public class Player2move : MonoBehaviour
             skinnedMeshRenderer.SetBlendShapeWeight(2, vy2 * blendd);
             Debug.Log("shrink2!");
             c.height = c.height - .003f;
+            sphere2.transform.localScale = bulletstartscale;
         }
         else
         {
             if (vy > 0 && vy2 < 0)
             {
+                
                 c.radius = c.radius + .002f;
+                sphere2.transform.localScale += new Vector3(.002f, .002f, .002f);
             }
             if (vy < 0)
             {
