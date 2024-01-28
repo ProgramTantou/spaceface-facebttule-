@@ -16,7 +16,7 @@ public class CreditCard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PushL1 = Input.GetAxisRaw("P1L1");
+        PushL1 = Input.GetAxisRaw("P2L2");
 
         cnt -= 1;
 
