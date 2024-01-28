@@ -23,7 +23,7 @@ public class Playermove : MonoBehaviour
     CapsuleCollider c;
     float cstartheight;
     float cstartradius;
-
+    Vector3 bulletstartscale;
     public float keyR = 0;//キーの入力方向。右。
     public float keyL = 0;//キーの入力方向。左。
     
@@ -50,6 +50,7 @@ public class Playermove : MonoBehaviour
         c = this.GetComponent<CapsuleCollider>();
         cstartheight = c.height;
         cstartradius = c.radius;
+        bulletstartscale = sphere.transform.localScale;
     }
 
     // Update is called once per frame
@@ -111,6 +112,7 @@ public class Playermove : MonoBehaviour
             blendl = 0;
             Debug.Log("reset!");
             c.radius = cstartradius;
+            sphere.transform.localScale = bulletstartscale;
             
         }
         if (vx < 0 && vx2 > 0)
@@ -121,12 +123,15 @@ public class Playermove : MonoBehaviour
             skinnedMeshRenderer.SetBlendShapeWeight(0, vx2 * blendr);
             Debug.Log("shrink!");
             c.radius = c.radius - .003f;
+            sphere.transform.localScale = bulletstartscale;
+
         }
         else
         {
             if (vx > 0 && vx2 < 0)
             {
                 c.radius = c.radius + .001f;
+                sphere.transform.localScale += new Vector3(.002f, .002f, .002f);
             }
             if (vx < 0)
             {
